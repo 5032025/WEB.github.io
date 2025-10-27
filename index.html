@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivar Market | Tu tienda de confianza</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <a href="#"><img src="logo.jpg" alt="Logo Sivar Market"></a>
+            <nav>
+                <a href="#productos">Productos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#login-modal" class="btn-login" id="main-login-btn">Iniciar Sesión</a>
+                <a href="#" class="cart-icon" id="main-cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-container">
+            <section class="hero-content">
+                <h1>Bienvenido a <span class="sivar-market-text">Sivar Market</span></h1>
+                <p class="subtitle">Tu tienda de confianza</p>
+                <p class="description">Tu tienda de confianza para productos de la canasta básica. Calidad garantizada, precios justos y la comodidad de comprar desde casa.</p>
+
+                <div class="hero-actions">
+                    <a href="#productos" class="btn btn-primary">Ver Productos</a>
+                    <a href="#nosotros" class="btn btn-secondary">Conoce más</a>
+                </div>
+
+                <div class="features-wrapper">
+                    <div class="feature-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <p>Entrega Rápida<br><small>El mismo día</small></p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-medal"></i>
+                        <p>Calidad Garantizada<br><small>Productos frescos</small></p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-box-open"></i>
+                        <p>Envío Gratis<br><small>Compras +$25</small></p>
+                    </div>
+                    <div class="stock-badge">
+                        <p>+500</p>
+                        <p><small>Productos disponibles</small></p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="hero-image">
+            </div>
+        </div>
+    </main>
+
+    <section id="productos" class="product-catalog-section">
+        <h2>Catálogo de Productos</h2>
+        <div class="product-list">
+        </div>
+    </section>
+
+    <section id="nosotros" class="info-section">
+        <h2>Nuestra Historia</h2>
+        <div class="info-content">
+            <p>En Sivar Market, somos un emprendimiento con corazón salvadoreño, que busca llevar la canasta básica de calidad y a precios justos hasta la puerta de su hogar, evite el tráfico y las largas filas; la comodidad está a solo un clic. Nos comprometemos con la frescura y rapidez, trabajando con proveedores locales para asegurar que cada producto sea de primera, porque su familia merece lo mejor. ¡Su mercado de confianza en línea!</p>
+            <div class="mission-vision">
+                <div class="card-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visión</h3>
+                    <p>Ser líderes en la distribución de productos de consumo en El Salvador, destacando por la eficiencia, la calidad y un servicio al cliente excepcional.</p>
+                </div>
+                <div class="card-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Misión</h3>
+                    <p>Simplificar la vida de las familias salvadoreñas, ofreciendo productos esenciales de alta calidad a través de la comodidad de la compra digital y entrega a domicilio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="info-section contact-section">
+        <h2>Contáctanos</h2>
+        <p class="contact-intro">¿Tiene alguna duda o necesita ayuda con su pedido? ¡Escríbanos! Con gusto le atenderemos.</p>
+        <div class="contact-details">
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <p>WhatsApp</p>
+                <strong>+503 7777-1234</strong>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <p>Instagram</p>
+                <strong>@SivarMarketSV</strong>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-twitter"></i>
+                <p>X (Twitter)</p>
+                <strong>@SivarMarketOficial</strong>
+            </div>
+        </div>
+        <a href="mailto:info@sivarmarket.sv" class="btn btn-primary btn-contact-email">Envíanos un Correo Electrónico</a>
+    </section>
+
+    <footer>
+        <div class="container section-padding" style="text-align: center; font-size: 0.9rem; padding-top: 20px; padding-bottom: 20px;">
+            <p>&copy; 2024 Sivar Market. Todos los derechos reservados.</p>
+            <p style="margin-top: 5px;"><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-login-modal">&times;</span>
+            <h2>Registro de Usuario</h2> 
+            <form id="login-form">
+                
+                <div id="name-container">
+                    <label for="reg-name">Nombre</label>
+                    <input type="text" id="reg-name" placeholder="Ej: Juan" required>
+                </div>
+                
+                <div id="lastname-container">
+                    <label for="reg-lastname">Apellido</label>
+                    <input type="text" id="reg-lastname" placeholder="Ej: Pérez" required>
+                </div>
+
+                <div id="username-container">
+                    <label for="reg-username">Nombre de Usuario</label>
+                    <input type="text" id="reg-username" placeholder="Ej: sivaruser123" required>
+                </div>
+
+                <div id="email-container">
+                    <label for="reg-email">Correo Electrónico</label>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div id="dui-container">
+                    <label for="reg-dui">Número de DUI</label>
+                    <input type="text" id="reg-dui" placeholder="XXXXXXXX-X" pattern="\d{8}-\d{1}" maxlength="10" required>
+                </div>
+                <!--ojito-->
+                <div id="password-container">
+    <label for="reg-password">Contraseña</label>
+    <div class="password-wrapper">
+        <input type="password" id="reg-password" placeholder="Ingresa tu contraseña" required>
+        <button type="button" class="toggle-password" id="togglePassword">
+            <svg class="eye-icon" id="eyeIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+                
+                <button type="submit" id="register-btn" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Registrarse</button>
+                
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--color-text-dark);">
+                    ¿Ya tienes cuenta? 
+                    <a href="#" id="show-login-form" style="font-weight: bold; color: var(--color-primary);">Inicia Sesión aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+
+            <button id="clear-cart-btn" class="btn btn-secondary">Vaciar Carrito</button>
+
+            <ul id="cart-list" class="cart-items-list">
+            </ul>
+
+            <div class="cart-summary">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-line total">
+                    <strong>Total a pagar:</strong>
+                    <strong id="cart-total">$0.00</strong>
+                </div>
+            </div>
+
+            <button id="checkout-btn" class="btn btn-primary" disabled>Pagar y Generar Factura</button>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-payment-modal">&times;</span>
+            <h2>Detalles de Pago</h2>
+
+            <form class="payment-form">
+                <p><strong>Total a pagar:</strong> <span id="final-payment-total">$0.00</span></p>
+
+                <label for="payment-method">Método de Pago</label>
+                <select id="payment-method">
+                    <option value="card">Tarjeta de Crédito / Débito</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+
+                <div id="card-details">
+                    <label for="card-number">Número de Tarjeta</label>
+                    <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+
+                    <div class="card-inline-fields">
+                        <div>
+                            <label for="card-expiry">Fecha Exp.</label>
+                            <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+                        <div>
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123" maxlength="4" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="paypal-details" style="display: none;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Información de Pago con PayPal:</p>
+                    <p>Por favor, complete su pago de <strong id="paypal-amount-display">$0.00</strong> a la siguiente cuenta y presione "Confirmar Pago".</p>
+                    <p>Cuenta Sivar Market: <strong>pago@sivarmarket.sv</strong></p>
+                </div>
+
+                <button type="button" id="confirm-payment-btn" class="btn btn-primary">Confirmar Pago</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="SIVARMARKET.js"></script>
+</body>
+</html>

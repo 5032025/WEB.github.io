@@ -1,0 +1,619 @@
+/* ======================================= */
+/* 0. VARIABLES Y RESET BÁSICO             */
+/* ======================================= */
+:root {
+    /* Colores */
+    --color-primary: #007bff; /* Azul vibrante */
+    --color-secondary: #008000; /* Verde para acciones de éxito/stock */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-bg-light: #f4f4f4;
+    --color-bg-celeste: #e0f7fa; /* Color celeste */
+    --color-border: #ddd;
+
+    /* Tipografía */
+    --font-family-main: 'Arial', sans-serif;
+
+    /* Espaciado */
+    --padding-base: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Aplicar fondo celeste al body (para que aplique a todas las secciones inferiores) */
+body {
+    font-family: var(--font-family-main);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-celeste); /* Fondo celeste */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+/* ======================================= */
+/* 1. COMPONENTES GLOBALES: BOTONES        */
+/* ======================================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: var(--color-text-light);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+/* ======================================= */
+/* 2. HEADER Y NAVEGACIÓN                  */
+/* ======================================= */
+
+header {
+    background-color: var(--color-text-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px var(--padding-base);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* CORRECCIÓN 1: Aumento moderado del tamaño del logo */
+header img {
+    height: 55px; /* Tamaño del logo AUMENTADO (anteriormente 60px, ahora 55px para que no "se pase") */
+    width: auto;
+}
+
+nav a {
+    margin-left: 15px;
+    color: var(--color-text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+.btn-login {
+    color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-login:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light) !important;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+    margin-left: 25px;
+    color: var(--color-text-dark);
+}
+
+#cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #dc3545; /* Rojo para notificaciones */
+    color: var(--color-text-light);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    line-height: 1;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* ======================================= */
+/* 3. SECCIÓN HERO (PRINCIPAL)             */
+/* ======================================= */
+
+/* Asegurar que el Hero tenga fondo BLANCO (para que el celeste empiece abajo) */
+.hero-section {
+    padding: 50px 0;
+    background-color: var(--color-text-light);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 var(--padding-base);
+}
+
+.hero-content {
+    flex: 1.5;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.sivar-market-text {
+    color: var(--color-secondary);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.description {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.hero-actions a {
+    margin-right: 15px;
+}
+
+/* CORRECCIÓN 2: Imagen de Fondo.jpg en el hero-image (el recuadro vacío) */
+.hero-image {
+    flex: 1;
+    min-height: 350px;
+    background: url('Fondo.png') no-repeat center center/cover; /* Usando Fondo.png */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Características/Incentivos */
+.features-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: 1px solid var(--color-border);
+}
+
+.feature-item:last-of-type {
+    border-right: none;
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.feature-item p {
+    line-height: 1.3;
+}
+
+.feature-item small {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.stock-badge {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.stock-badge small {
+    color: #eee;
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+
+/* ======================================= */
+/* 4. SECCIÓN CATÁLOGO DE PRODUCTOS        */
+/* El fondo celeste ya se aplica desde el body. */
+/* ======================================= */
+
+.product-catalog-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 var(--padding-base);
+}
+
+.product-catalog-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--color-text-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.product-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.product-stock {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Empuja el precio y botón al final */
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text-dark);
+}
+
+.btn-add-cart {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ======================================= */
+/* 5. MODALES (CARRITO Y PAGO)             */
+/* ======================================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Inicialmente oculto */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.open {
+    display: flex; /* Muestra el modal */
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--color-text-light);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilos del Carrito */
+#clear-cart-btn {
+    margin-bottom: 15px;
+    float: right;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+.cart-items-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-border);
+}
+
+.item-name {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.item-qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 10px;
+}
+
+.item-qty-controls button {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    line-height: 1;
+    font-weight: bold;
+    padding: 0;
+}
+
+.item-price {
+    font-weight: bold;
+    color: var(--color-secondary);
+    min-width: 60px;
+    text-align: right;
+}
+
+.btn-remove-item {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.cart-summary {
+    border-top: 2px solid var(--color-border);
+    padding-top: 15px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.summary-line.total {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+#checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos del Pago */
+.payment-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.payment-form input[type="text"],
+.payment-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.card-inline-fields {
+    display: flex;
+    gap: 15px;
+}
+
+.card-inline-fields > div {
+    flex: 1;
+}
+
+#confirm-payment-btn {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* ======================================= */
+/* 6. MEDIA QUERIES (Responsividad)        */
+/* ======================================= */
+
+@media (max-width: 800px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1; /* Mueve la imagen arriba en móviles */
+        height: 250px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .features-wrapper {
+        justify-content: center;
+    }
+
+    .feature-item {
+        border-right: none;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    nav a {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    header > div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr; /* Una sola columna para productos */
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+}
+
+/*ojito*/
+#reg-password::-ms-reveal,
+#reg-password::-ms-clear {
+    display: none;
+}
+
+#reg-password::-webkit-credentials-auto-fill-button,
+#reg-password::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Asegurar que el input tenga espacio para el botón */
+#password-container input[type="password"],
+#password-container input[type="text"] {
+    width: 100%;
+    padding-right: 45px !important;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    transform: scale(1.1);
+}
+
+.eye-icon {
+    width: 24px;
+    height: 24px;
+    color: #2c5f2d;
+}
